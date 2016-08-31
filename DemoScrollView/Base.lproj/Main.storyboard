@@ -1,25 +1,61 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--View Scroll-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewScroll" customModule="DemoScrollView" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HiK-Rj-kRb">
+                                <rect key="frame" x="22" y="84" width="330" height="500"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="500" id="ddo-Ay-cdU"/>
+                                    <constraint firstAttribute="width" constant="330" id="hxV-C9-03n"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="H5w-JX-6ZG"/>
+                                </connections>
+                            </scrollView>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.5" maxValue="2" translatesAutoresizingMaskIntoConstraints="NO" id="5Ah-4P-wbi">
+                                <rect key="frame" x="16" y="599" width="343" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Flg-4w-fao"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="slider:" destination="BYZ-38-t0r" eventType="valueChanged" id="900-BQ-tOL"/>
+                                </connections>
+                            </slider>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5Ah-4P-wbi" firstAttribute="top" secondItem="HiK-Rj-kRb" secondAttribute="bottom" constant="15" id="CZg-ux-Gr2"/>
+                            <constraint firstItem="5Ah-4P-wbi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="2" id="UDb-yw-9AG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5Ah-4P-wbi" secondAttribute="trailing" constant="2" id="hi9-Ru-uFD"/>
+                            <constraint firstItem="HiK-Rj-kRb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pFg-9h-0mb"/>
+                            <constraint firstItem="HiK-Rj-kRb" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="sZd-hz-8oc"/>
+                        </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="scrollView" destination="HiK-Rj-kRb" id="AAS-ro-SFu"/>
+                        <outlet property="slider" destination="5Ah-4P-wbi" id="Vyf-jh-xzz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="244.5" y="310.5"/>
         </scene>
     </scenes>
 </document>
