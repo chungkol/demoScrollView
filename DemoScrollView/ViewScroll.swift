@@ -35,12 +35,12 @@ class ViewScroll: UIViewController, UIScrollViewDelegate {
         imgView.addGestureRecognizer(doubleTap)
         
         scrollView.contentSize = CGSizeMake(imgView.bounds.width, imgView.bounds.height)
-        scrollView.minimumZoomScale = 0.5
+        scrollView.minimumZoomScale = 1
         scrollView.maximumZoomScale = 2
         
-        let scale = 1
-        let point = scrollView.center
-        zoomRectForScale(CGFloat(scale), center: point)
+//        let scale = 1
+//        let point = scrollView.center
+//        zoomRectForScale(CGFloat(scale), center: point)
         
         self.scrollView.addSubview(imgView)
     }
@@ -75,8 +75,7 @@ class ViewScroll: UIViewController, UIScrollViewDelegate {
 
         slider.maximumValue = Float(scrollView.maximumZoomScale)
         let scale = slider.value
-        let point = CGPointMake(scrollView.center.x + scrollView.frame.origin.x , scrollView.center.y + scrollView.frame.origin.y)
-        zoomRectForScale(CGFloat(scale), center: point)
+        scrollView.setZoomScale(CGFloat(scale), animated: true)
     }
     
     

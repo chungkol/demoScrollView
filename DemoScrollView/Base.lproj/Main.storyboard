@@ -28,7 +28,7 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="H5w-JX-6ZG"/>
                                 </connections>
                             </scrollView>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.5" maxValue="2" translatesAutoresizingMaskIntoConstraints="NO" id="5Ah-4P-wbi">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="2" translatesAutoresizingMaskIntoConstraints="NO" id="5Ah-4P-wbi">
                                 <rect key="frame" x="16" y="599" width="343" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Flg-4w-fao"/>
