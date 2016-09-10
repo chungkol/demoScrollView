@@ -38,6 +38,13 @@ class ViewScroll: UIViewController, UIScrollViewDelegate {
         scrollView.minimumZoomScale = 1
         scrollView.maximumZoomScale = 2
         
+        scrollView.backgroundColor = UIColor.blueColor()
+//        scrollView.contentSize = CGSizeMake(imgView.frame.width, imgView.frame.height)
+//        scrollView.bounces = true
+//        scrollView.contentOffset = CGPointMake(-100, -50)
+        scrollView.clipsToBounds = true
+//        scrollView.contentInset
+        
 //        let scale = 1
 //        let point = scrollView.center
 //        zoomRectForScale(CGFloat(scale), center: point)
